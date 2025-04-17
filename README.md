@@ -20,6 +20,7 @@ Este projeto é uma aplicação simples de CRUD (Create, Read, Update, Delete) p
    ├── proc_cad_usuario.php # Processa o cadastro de usuários
    ├── proc_edit_usuario.php # Processa a edição de usuários
    └── naion.sql # Script SQL para criar a estrutura do banco de dados
+```
 
 ### Configuração do Banco de Dados
 
