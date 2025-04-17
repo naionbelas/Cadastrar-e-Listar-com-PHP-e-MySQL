@@ -1,52 +1,64 @@
-# CRUD de Usuários em PHP
+# README.md
 
-Este projeto é um sistema simples de CRUD (Create, Read, Update, Delete) para gerenciar usuários, desenvolvido em PHP. O sistema permite cadastrar, listar e editar usuários, utilizando um banco de dados MySQL.
+## Projeto CRUD - Cadastrar Usuário
 
-## Pré-requisitos
+Este projeto é uma aplicação simples de CRUD (Create, Read, Update, Delete) para cadastrar usuários. Ele foi desenvolvido em PHP e utiliza o MySQL como banco de dados. O projeto pode ser executado em um servidor local utilizando o XAMPP.
 
-- **Servidor Local**: XAMPP
-- **PHP**: Versão 7.0 ou superior
-- **MySQL**: Para o banco de dados
+### Pré-requisitos
 
-## Instalação
+- [XAMPP](https://www.apachefriends.org/index.html) instalado em sua máquina.
+- Um navegador web para acessar a aplicação.
 
-1. **Clone o repositório** ou faça o download dos arquivos do projeto.
-   
-   ```bash
-   git clone <URL_DO_REPOSITORIO>
-Coloque os arquivos na pasta htdocs do XAMPP. O caminho geralmente é:
+### Estrutura do Projeto
 
-Run
-Copy code
-C:\xampp\htdocs\seu_projeto
-Crie o banco de dados:
+```
+/MultipleFiles
+   ├── cad_usuario.php # Página para cadastrar novos usuários
+   ├── conexao.php # Arquivo de conexão com o banco de dados
+   ├── edit_usuario.php # Página para editar usuários existentes
+   ├── index.php # Página principal para listar usuários
+   ├── proc_cad_usuario.php # Processa o cadastro de usuários
+   ├── proc_edit_usuario.php # Processa a edição de usuários
+   └── naion.sql # Script SQL para criar a estrutura do banco de dados
 
-Abra o phpMyAdmin (geralmente acessível em http://localhost/phpmyadmin).
-Crie um novo banco de dados chamado naion.
-Execute o script SQL necessário para criar a tabela usuarios. (O script não está incluído, mas a tabela deve ter pelo menos as colunas id, nome, email, created, e modified).
-Configure a conexão:
+### Configuração do Banco de Dados
 
-No arquivo conexao.php, verifique se as credenciais do banco de dados estão corretas:
-php
-Run
-Copy code
-$servidor = "localhost";
-$usuario = "root"; // Usuário padrão do XAMPP
-$senha = ""; // Senha padrão do XAMPP
-$dbname = "naion"; // Nome do banco de dados
-Estrutura do Projeto
-cad_usuario.php: Página para cadastrar novos usuários.
-edit_usuario.php: Página para editar usuários existentes.
-index.php: Página para listar todos os usuários cadastrados.
-conexao.php: Arquivo responsável pela conexão com o banco de dados.
-proc_cad_usuario.php: Processa o cadastro de novos usuários.
-proc_edit_usuario.php: Processa a edição de usuários existentes.
-Como Usar
-Inicie o XAMPP e ative os módulos Apache e MySQL.
-Acesse o sistema pelo navegador em http://localhost/seu_projeto/cad_usuario.php para cadastrar um novo usuário.
-Após o cadastro, você pode listar os usuários em http://localhost/seu_projeto/index.php e editar os dados conforme necessário.
-Créditos
-Este projeto foi inspirado e desenvolvido com base nos tutoriais do canal Celke Cursos.
+1. **Importar o Banco de Dados:**
+   - Abra o XAMPP e inicie o Apache e o MySQL.
+   - Acesse o phpMyAdmin (geralmente em `http://localhost/phpmyadmin`).
+   - Crie um novo banco de dados chamado `naion`.
+   - Importe o arquivo `naion.sql` para criar a tabela `usuarios`.
 
-Licença
-Este projeto é de código aberto e pode ser utilizado e modificado conforme necessário.
+2. **Configurar a Conexão:**
+   - No arquivo `conexao.php`, verifique se as credenciais do banco de dados estão corretas:
+     ```php
+     $servidor = "localhost";
+     $usuario = "root"; // Usuário padrão do XAMPP
+     $senha = "";       // Senha padrão do XAMPP
+     $dbname = "naion"; // Nome do banco de dados
+     ```
+
+### Executando o Projeto
+
+1. Coloque a pasta `MultipleFiles` dentro do diretório `htdocs` do XAMPP (geralmente localizado em `C:\xampp\htdocs`).
+2. Abra o navegador e acesse `http://localhost/MultipleFiles/cad_usuario.php` para cadastrar um novo usuário.
+3. Após o cadastro, você pode listar os usuários em `http://localhost/MultipleFiles/index.php` e editar os dados conforme necessário.
+
+### Funcionalidades
+
+- Cadastro de usuários com nome e e-mail.
+- Edição de usuários existentes.
+- Listagem de usuários cadastrados.
+- Mensagens de sucesso ou erro após o cadastro e edição.
+
+### Créditos
+
+Este projeto foi inspirado e desenvolvido com a ajuda dos tutoriais do canal [Celkecursos](https://www.youtube.com/@celkecursos). Agradecemos pelo excelente conteúdo!
+
+### Licença
+
+Este projeto é de uso livre. Sinta-se à vontade para utilizá-lo e modificá-lo conforme necessário.
+
+---
+
+**Nota:** Este projeto é uma demonstração simples e não deve ser utilizado em produção sem as devidas medidas de segurança, como validação de entrada e proteção contra SQL Injection.
